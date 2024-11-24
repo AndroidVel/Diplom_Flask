@@ -1,0 +1,67 @@
+body, html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("https://img.lovepik.com/bg/20231226/loaf-of-bread-is-sitting-on-a-wooden-board_2491106_wh860.png");
+  min-height: 700px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.error {
+    color: red;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  color: #1e1b1c;
+  border-radius: 10px;
+  left: 5%;
+  margin: 5%;
+  min-width: 300px;
+  max-width: 500px;
+  width: 40%;
+  padding: 25px;
+  background-color: #fffbf3;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #89542c;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

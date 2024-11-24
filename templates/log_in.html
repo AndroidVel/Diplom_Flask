@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+
+{% block style %}
+    {% include 'css/index.css' %}
+    {% include 'css/login.css' %}
+{% endblock %}
+
+{% block content %}
+    <div class="bg-img">
+        <form class="container" method="post">
+            <h1>Войти</h1>
+              
+            <label for="email"><b>Почта</b></label>
+            <input type="text" placeholder="Введите электронную почту" name="email" id="email" required>
+            
+            <label for="psw"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" id="psw" required>
+
+
+            <div class="error">{{ error }}</div>
+            <p>
+            <button type="submit" class="btn">Войти</button>
+        </form>
+    </div>
+{% endblock %}
