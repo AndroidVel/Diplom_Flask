@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title>
+        {% block title %}
+            {{ title }}
+        {% endblock %}
+    </title>
+    <style>
+        {% block style %}
+            {% include 'css/index.css' %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+    <!-- Head of page -->
+    <div class="bg-image-header">
+        <div class="text-header">{{ pagename }}</div>
+    </div>
+    {% block menu %}
+        <!-- Navbar -->
+        <div class="navbar" id="NavBar">
+            <a href="/" class={{ LinkStatus.home }}>Главная</a>
+            <a href="/products" class={{ LinkStatus.products }}>Продукты</a>
+            <a href="/about" class={{ LinkStatus.about }}>О нас</a>
+            {% if logged %}
+                <div class="navbar-right">                    
+                    <a href="/profile/info" class={{ LinkStatus.profile_info }}>Профиль</a>
+                    <a href="/profile/cart" class={{ LinkStatus.cart }}>Корзина</a>                        
+                    <a href="/profile/log_out" class={{ LinkStatus.log_out }}>Выйти</a>
+                </div> 
+            {% else %}
+                <div class="navbar-right">
+                    <a href="/log_in" class={{ LinkStatus.log_in }}>Войти</a>
+                    <a href="/sign_up" class={{ LinkStatus.sign_up }}>Регистрация</a>
+                </div>
+            {% endif %}
+            <a style="font-size:15px;" class="icon" onclick="getList()">&#9776;</a>
+        </div>
+    {% endblock %}
+    {% block content %}
+        <!-- Background image -->
+        <div class="bg-image"></div>
+        
+        <!-- Welcome text -->
+        <div class="welcome">
+            Добро пожаловать в нашу булочную!
+        </div>
+        
+        <!-- The First Container -->
+        <div class="container">
+            <div class="row">
+                <div class="column-text">
+                    <div style="font-size:30px           ">
+                        Мы приглашаем вас в мир свежей выпечки, 
+                        где каждый день начинается с аромата хрустящего хлеба, 
+                        теплых булочек и нежных пирожных.
+                    </div>
+                    <p>
+                    <div style="font-size: 30px">
+                        Наша команда пекарей создаёт изделия 
+                        с вниманием к каждой детали и уважением к традициям, 
+                        чтобы каждый ваш визит к нам был не просто покупкой, 
+                        а маленьким праздником.
+                    </div>
+                </div>
+                
+                <div class="column-img">
+                    <img class="img" src="https://planetavkysov.ru/image/cache/resize/h/390/catalog/vipechka1.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Second Container -->
+        <div class="container">
+            <div class="row">
+                <div class="column-img">
+                    <img class="img" src="https://golossokal.com.ua/wp-content/uploads/2018/11/pekarnia.jpg" alt="App" width="335" height="471">
+                </div>
+                
+                <div class="column-text">
+                    <div style="font-size: 33px">
+                        Мы гордимся тем, что работаем только с натуральными ингредиентами, 
+                        тщательно отбирая муку, масло и начинку, 
+                        чтобы каждый кусочек радовал своим настоящим вкусом.
+                    </div>
+                    <p>
+                    <div style="font-size: 33px">
+                        Каждый день мы выпекаем хлеба, круассаны и сладости, 
+                        которые наполняют наши полки и готовятся специально для вас.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Third Container -->
+        <div class="container">
+            <div class="row">
+                <div class="column-text">
+                    <div style="font-size:36px">
+                        Загляните к нам, чтобы начать день с тёплой булочки, 
+                        порадовать себя чем-то сладким или просто за вдохновением.
+                    </div>
+                    <p>
+                    <div style="font-size:36px">
+                        Мы всегда рады видеть вас и разделить с вами нашу любовь к выпечке!
+                    </div>
+                    <a href="/products">Посмотреть продукты</a>
+                </div>
+                
+                <div class="column-img">
+                    <img class="img" src="https://www.pogostite.ru/images/1280/960/0/admin/images/news/2635/p1cc9fdbgj1dbnb7i1tc49g91duk5.jpg" width="335" height="471"  alt="img">
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    <!-- If the size of screen is smaller, then 600px, navbar change to an icon -->
+    <script>
+        function getList() {
+            let x = document.getElementById("NavBar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
+</body>
+</html>

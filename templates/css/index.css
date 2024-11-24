@@ -1,0 +1,196 @@
+/* Page background */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://img.freepik.com/free-photo/baked-baguette-assortment-top-view-with-copy-space_23-2148229141.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+* {
+    box-sizing: border-box;
+}
+
+.bg-image-header {
+    background-image: url('https://brestmmp.by/uploads/images/img_product/hleb1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-header {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    position: sticky;
+    font-weight: bold;
+    font-size: 80px;
+    left: 50%;
+    z-index: 2;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Welcome text */
+.welcome {
+    text-align: center;
+    background-color: rgb(225, 178, 118, 0.8);
+    font-size: 60px;
+    border: #956808 3px solid;
+    border-radius: 15px;
+    margin: 2% 2% 0% 2%;
+    font-family: "Nunito",sans-serif
+}
+
+/* Add a black background color to the top navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    z-index: 99;
+}
+
+/* Navbar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border: #303030 1px solid;
+}
+
+/* Navbar link hover */
+.navbar a:hover {
+    background-color: rgba(140, 82, 37, 0.5);
+    opacity: 0.7;
+    color: white;
+}
+
+/* Right navbar links */
+.navbar-right {
+    float: right;
+}
+
+/* Current link */
+.active {
+    background-color: #8c5225;
+    color: white;
+}
+
+/* Navbar icon when page is small */
+.navbar .icon {
+    display: none;
+}
+
+/* When page is smaller then 600px an navbar icon appears */
+@media screen and (max-width: 600px) {
+    .navbar a:not(:first-child), .navbar-right {
+        display: none;
+    }
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar.responsive {
+        position: sticky;
+        top: 0;
+    }
+    .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .navbar.responsive .navbar-right {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+/* Container for text */
+.container {
+    padding: 64px;
+    background-color: rgba(34, 20, 9, 0.5);
+    color: rgb(244, 214, 170);
+    margin: 5%;
+    border-radius: 50px;
+    border: 2px solid rgb(80, 80, 80);
+    font-family: "Arial",sans-serif
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Column for text */
+.column-text {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+}
+
+/* Button 'to products' */
+.column-text a {
+    background-color: rgba(189, 163, 74, 0.52);
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    border: #303030 1px solid;
+}
+
+/* Column for image */
+.column-img {
+    float: left;
+    width: 33.33333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6%;
+}
+
+/* Image in text */
+.img {
+    height: auto;
+    max-width: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Button 'to products' */
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+        width: 100%;
+        text-align: center;
+    }
+    img {
+        display: none;
+    }
+}
