@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+
+{% block style %}
+    {% include 'css/index.css' %}
+    {% include 'css/profile_info.css' %}
+{% endblock %}
+
+{% block content %}
+    <div class="bg-img">
+        <form class="container" method="post" action="/profile/info">
+            <h1>Информация пользователя</h1>
+              
+            <label for="email"><b>Почта</b></label>
+            <input type="email" placeholder="Введите электронную почту" name="email" id="email" value="{{ email }}" maxlength="30" required>
+            
+            <label for="first-name"><b>Имя</b></label>
+            <input type="text" placeholder="Введите имя" name="first_name" id="fst-name" value="{{ first_name }}" minlength="3" maxlength="20" required>
+            
+            <label for="last-name"><b>Фамилия</b></label>
+            <input type="text" placeholder="Введите фамилию" name="last_name" id="last-name" value="{{ last_name }}" minlength="3" maxlength="20" required>
+            
+            <div class="error">{{ error }}</div>            
+            <button type="submit" class="btn">Сохранить изменения</button>
+        </form>
+    </div>
+{% endblock %}
