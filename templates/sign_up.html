@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+
+{% block style %}
+    {% include 'css/index.css' %}
+    {% include 'css/sign_up.css' %}
+{% endblock %}
+
+{% block content %}
+    <div class="bg-img">
+        <form class="container" method="post" action="/sign_up">
+            <h1>Регистрация</h1>
+            <p>Пожалуйста, введите все данные, чтобы создать аккаунт.</p>
+            <hr>
+
+            <label for="email"><b>Почта</b></label>
+            <input type="email" placeholder="Введите электронную почту" name="email" id="email" value="{{ email }}" maxlength="30" required>
+            
+            <label for="first-name"><b>Имя</b></label>
+            <input type="text" placeholder="Введите имя" name="first_name" id="first-name" value="{{ first_name }}" minlength="3" maxlength="20" required>
+            
+            <label for="last-name"><b>Фамилия</b></label>
+            <input type="text" placeholder="Введите фамилию" name="last_name" id="last-name" value="{{ last_name }}" minlength="3" maxlength="20" required>
+
+            <label for="psw"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="password" id="psw" value="{{ password }}" minlength="8" maxlength="20" required>
+
+            <label for="psw-repeat"><b>Повторить пароль</b></label>
+            <input type="password" placeholder="Повторите пароль" name="password_repeat" id="psw-repeat" value="{{ repeat_password }}" minlength="8" maxlength="20" required>
+            <hr>
+            <div class="error">{{ error }}</div>
+            <p>
+            <button type="submit" class="btn">Регистрироваться</button>
+
+            <div class="signin">
+                <p>Уже имеется аккаунт? <a href="/log_in">Войти</a>.</p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
