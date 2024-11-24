@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+
+{% block style %}
+    {% include 'css/index.css' %}
+    {% include 'css/products.css' %}
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <form class="center" method="get" action="/products">
+        <input type="text" name="search" placeholder="Search..." value="{{ search }}">
+        <button type="submit" class="top-btn" name="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+    <form method="post" action="/products/add_to_cart">
+        {% if products %}
+            {%  for product in products %}
+                <div class="column">
+                    <div class="card">
+                        <div><img src="{{ product.image_url }}" alt="{{ product.name }}"></div>
+                        <h2>{{ product.name }}</h2>
+                        <div class="text-left">Вес: {{ product.weight }}г</div>
+                        <div class="text-right"><b>Цена: {{ product.price }}₽</b></div>
+                        {% if is_logged_in %}
+                            <button type="submit" class="btn" name="card_button" value="{{ product.name }}">Добавить в корзину</button>
+                        {% else %}
+                            <a href="#modal-one" class="btn">Добавить в корзину</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+                <div class="modal" id="modal-one" aria-hidden="true">
+                    <div class="modal-dialog">    
+                        <div class="modal-body">
+                            Войдите в свой профиль
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn">OK</a>
+                        </div>
+                    </div>
+                </div>
+        {% else %}
+            <div class="notfound"><b>Товар не найден</b></div>
+        {% endif %}
+    </form>
+{% endblock %}

@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://cdn.pixabay.com/photo/2017/02/14/09/02/wood-2065366_1280.jpg");
+}
+
+
+img {
+  height: 170px;
+  width: 280px;
+  padding: 0 10px;
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+}
+
+.text-right {
+  float: right;
+  padding-bottom: 10px;
+}
+
+.text-left {
+  float: left;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .column {
+    width: 33%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 450px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Style the counter cards */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.9);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 10px;
+}
+
+.btn {
+  background-color: #89542c;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.top-btn {
+  background-color: #89542c;
+  width: 85px;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+}
+
+input[type=text] {
+  width: 300px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  text-align: center;
+}
+
+input[type=text]:focus {
+  width: 50%;
+}
+
+.center {
+  text-align: center;
+}
+
+.notfound {
+  text-align: center;
+  color: #bd9d00;
+  margin: 5%;
+  font-size: 40px;
+}
+
+.total-price {
+    width: 315px;
+    margin-left: 40%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    text-align: center;
+}
+
+.btn {
+  background: #89542c;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 60px;
+  position: relative;
+  transition: color .1s ease;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.9);
+
+}
+.btn.btn-big {
+  font-size: 18px;
+  padding: 15px 20px;
+  min-width: 100px;
+}
+.btn-close {
+  color: #aaaaaa;
+  font-size: 30px;
+  text-decoration: none;
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+.btn-close:hover {
+  color: #919191;
+}
+.modal:before {
+  content: "";
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.modal:target:before {
+  display: block;
+}
+.modal:target .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  top: 20%;
+}
+.modal-dialog {
+  background: #fefefe;
+  border: #333333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  z-index: 11;
+  width: 360px;
+  -webkit-transform: translate(0, -500%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 10px;
+  border-top: #eeeeee solid 1px;
+  text-align: right;
+}
